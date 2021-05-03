@@ -1,31 +1,76 @@
-import React from 'react';
+import React,{useState} from 'react';
+import {Link} from 'react-router-dom'
+
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-const Resume = () => {
+const Resume = (props) => {
+    const styleLabel={
+
+    }
+    const print = (e)=>{
+        e.preventDefault();
+        var first_name = document.getElementById("first").value
+        var middle_name = document.getElementById("middle").value
+        var last_name = document.getElementById("last").value
+        var name=first_name+" "+middle_name+" "+last_name
+        const details = {name,profile,workXP,education}
+        props.setData(details)
+    }
+    const [profile, setprofile] = useState("");
+    const [workXP, setWorkXP] = useState("");
+    const [education, setEducation] = useState("");
     return (
         <div className="container" >
-             <h2>Using CKEditor 5 build in React</h2>
+            <form className="form-control">
+                <label style={{styleLabel}} className="my-2 mx-5" htmlFor="name">Name</label>
+                <div className="input-group">
+                  <span className="input-group-text">Name</span>
+                  <input type="text" aria-label="First name" id="first" required className="form-control"/>
+                  <input type="text" aria-label="Middle name" id="middle" className="form-control"/>
+                  <input type="text" aria-label="Last name" id="last" required className="form-control"/>
+                </div>
+                <label style={{styleLabel}} className="my-2 mx-5" htmlFor="profile">Profile</label>
                 <CKEditor
+                    required
                     editor={ ClassicEditor }
-                    data="<p>Hello from CKEditor 5!</p>"
-                    onReady={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        // console.log( 'Editor is ready to use!', editor );
-                        console.log( 'Editor is ready to use!' );
-                    } }
+                    data="<p>Write about your Profile</p>"
+                    onReady={ editor => {} }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        // console.log( { event, editor, data } );
-                        console.log(data)
+                        setprofile(data)
                     } }
-                    onBlur={ ( event, editor ) => {
-                        // console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ ( event, editor ) => {
-                        // console.log( 'Focus.', editor );
-                    } }
+                    onBlur={ ( event, editor ) => {} }
+                    onFocus={ ( event, editor ) => {} }
                 />
+                <label style={{styleLabel}} className="my-2 mx-5" htmlFor="profile">Work Experience</label>
+                <CKEditor
+                    required
+                    editor={ ClassicEditor }
+                    data="<p>Write about your Work Experience</p>"
+                    onReady={ editor => {} }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        setWorkXP(data)
+                    } }
+                    onBlur={ ( event, editor ) => {} }
+                    onFocus={ ( event, editor ) => {} }
+                />
+                <label style={{styleLabel}} className="my-2 mx-5" htmlFor="profile">Education</label>
+                <CKEditor
+                    required
+                    editor={ ClassicEditor }
+                    data="<p>Write about your Education</p>"
+                    onReady={ editor => {} }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        setEducation(data)
+                    } }
+                    onBlur={ ( event, editor ) => {} }
+                    onFocus={ ( event, editor ) => {} }
+                />
+            </form>
+            <button className="btn btn-success" onClick={print} type="submit"> <Link to="/print" >Print</Link> </button>
         </div>
     );
 }

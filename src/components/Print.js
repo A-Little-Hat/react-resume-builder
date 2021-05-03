@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Print = () => {
+const Print = (props) => {
     return (
         <div>
-            print page
+            {
+                console.log(props.data)
+            }
         </div>
     );
 }

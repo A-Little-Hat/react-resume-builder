@@ -1,11 +1,13 @@
 import React from 'react';
 import Resume from './Resume';
 
-const Home = () => {
+const Home = (props) => {
+    
     return (
+            
         <div>
             home page
-            <Resume/>
+            <Resume setData={props.setData} />
         </div>
     );
 }
