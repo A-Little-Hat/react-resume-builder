@@ -1,8 +1,10 @@
 {
-  "name": "google-docs-clone",
-  "version": "0.1.0",
+  "name": "resume-builder",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^27.1.0",
+    "@ckeditor/ckeditor5-react": "^3.0.2",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
