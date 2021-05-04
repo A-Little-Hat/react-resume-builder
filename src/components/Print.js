@@ -9,25 +9,34 @@ const Print = (props) => {
     var profile=result.profile
     var workXP=result.workXP
     var education=result.education
-    window.onload =()=>{
-        document.getElementById("profile").innerHTML=profile
-        }
         useEffect(() => {
             document.getElementById("profile").innerHTML=profile
-        }, [profile])
+            document.getElementById("Work").innerHTML=workXP
+            document.getElementById("education").innerHTML=education
+        }, [profile,name,workXP,education])
     
     return (
         
         <div className="row m-4 mt-5">
-            <div className="col-md-4">
+            <div className="col-md-2">
                 {name}
             </div>
-            <div className="col-md-8">
+            <div className="col-md-10">
                 <button className=" MyHeading " >Profile</button>
-                <div id="profile">
+                <div id="profile" className="MyData" >
+
+
+                </div>
+                <button className=" MyHeading " >Education</button>
+                <div id="education" className="MyData" >
+
+
+                </div>
+                <button className=" MyHeading " >Work Experience</button>
+                <div id="Work" className="MyData" >
+
                     
                 </div>
-
             </div>
         </div>
         

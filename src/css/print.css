@@ -7,3 +7,10 @@
     background-color: black;
     color: white;
 }
+.MyData{
+    margin-top: 25px;
+    min-height: 20vh;
+    margin-bottom: 25px;
+    background-color: lawngreen;
+    padding: 10px;
+}
