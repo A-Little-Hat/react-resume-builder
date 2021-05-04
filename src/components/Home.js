@@ -6,7 +6,6 @@ const Home = (props) => {
     return (
             
         <div>
-            home page
             <Resume setData={props.setData} />
         </div>
     );
