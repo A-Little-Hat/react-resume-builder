@@ -18,8 +18,10 @@ const Print = (props) => {
     return (
         
         <div className="row m-4 mt-5">
-            <div className="col-md-2">
+            <div className="col-md-2" >
+                <div className="Myprof">
                 {name}
+                </div>
             </div>
             <div className="col-md-10">
                 <button className=" MyHeading " >Profile</button>

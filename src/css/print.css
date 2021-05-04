@@ -1,7 +1,6 @@
 .MyHeading{
     font-family: "Arial Black", sans-serif;
     font-size: 2rem;
-    /* font-size: 4.5em; */
     cursor: mouse;
     letter-spacing: 1px;
     background-color: black;
@@ -11,6 +10,12 @@
     margin-top: 25px;
     min-height: 20vh;
     margin-bottom: 25px;
-    background-color: lawngreen;
+    background-color: rgba(215, 219, 211, 0.349);
     padding: 10px;
 }
+/* .Myprof{
+    border-color: black;
+    border-width: 5px;
+    min-height: 100vh;
+    min-width: 40px;
+} */
