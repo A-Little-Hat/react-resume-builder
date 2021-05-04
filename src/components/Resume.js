@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -13,9 +12,13 @@ const Resume = (props) => {
         var middle_name = document.getElementById("middle").value
         var last_name = document.getElementById("last").value
         var name = first_name + " " + middle_name + " " + last_name
-        if(name && profile && workXP){
+        if(name && profile && workXP && education){
             const details = { name, profile, workXP, education }
             props.setData(details)
+            props.setIsPrint(true)
+        }
+        else{
+            alert("please fill all the fields")
         }
     }
     const [profile, setprofile] = useState("");
@@ -24,7 +27,7 @@ const Resume = (props) => {
     return (
         <div className="container-flude m-2 text-center draw-border p-5" >
             <p><h1><header>Resume Builder</header></h1></p>
-            <form className="form-control">
+            <form  className="form-control">
                 <label className="draw-border Mybtn my-2 mx-5" htmlFor="name">Name</label>
                 <div className="input-group">
                     <span className="input-group-text">Name</span>
@@ -71,7 +74,7 @@ const Resume = (props) => {
                         onBlur={(event, editor) => { }}
                         onFocus={(event, editor) => { }}
                     />
-                <button className="btnPrint draw-border" onClick={print} type="submit"> <Link to="/print" >Print</Link> </button>
+                <button className="btnPrint draw-border" onClick={print} type="submit">Preview</button>
             </form>
         </div>
             );

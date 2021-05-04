@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Resume from './Resume';
 
 const Home = (props) => {
@@ -6,7 +7,7 @@ const Home = (props) => {
     return (
             
         <div>
-            <Resume setData={props.setData} />
+            <Resume setIsPrint={props.setIsPrint} setData={props.setData} />
         </div>
     );
 }
