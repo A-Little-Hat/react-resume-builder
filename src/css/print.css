@@ -1,0 +1,9 @@
+.MyHeading{
+    font-family: "Arial Black", sans-serif;
+    font-size: 2rem;
+    /* font-size: 4.5em; */
+    cursor: mouse;
+    letter-spacing: 1px;
+    background-color: black;
+    color: white;
+}
