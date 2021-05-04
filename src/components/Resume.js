@@ -15,7 +15,8 @@ const Resume = (props) => {
         if(name && profile && workXP && education){
             const details = { name, profile, workXP, education }
             props.setData(details)
-            props.setIsPrint(true)
+            props.setIsPrint( true )
+            
         }
         else{
             alert("please fill all the fields")

@@ -10,15 +10,24 @@ import Print from './components/Print';
 function App() {
   const [data, setData] = useState({});
   const [isPrint, setIsPrint] = useState(false)
-  if(!isPrint){
-    return (
-      <Home setData={setData} setIsPrint={setIsPrint} />
-    );
-  }
-  else{
-      <Print data={data} />
-  }
-  
+  return(
+  <Router>  
+    <Switch>
+      if({!isPrint}){
+        <Route exact path="/" />
+      }
+      else{
+        <Route path="/print"/>
+      }
+      <Route exact path="/" >
+        <Home setData={setData} setIsPrint={setIsPrint} />
+      </Route>
+      <Route path="/print">
+        <Print data={data} />
+      </Route>
+    </Switch>
+  </Router>
+  );
   
 }
 
