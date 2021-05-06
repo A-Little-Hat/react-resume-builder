@@ -3,6 +3,9 @@ import React,{useEffect} from 'react';
 import '../css/print.css'
 
 const Print = (props) => {
+    const done=()=>{
+        window.print()
+    }
     var result=props.data
     console.log(props.data)
     var name=result.name
@@ -20,11 +23,11 @@ const Print = (props) => {
     return (
         
         <div className="row printFile m-4 mt-5">
-            <div className="col-md-2" >
-                <div className="Myprof">
-                    <p className="MyDetails"> Name : {name} </p>
-                    <p className="MyDetails"> Date Of Birth : {dob} </p>
-                    <p className="MyDetails"> Hobby : {hobby} </p>
+            <div className="col-md-2 Myprof " >
+                <div className=" col2">
+                    <p className="MyDetails"> <strong>Name</strong> : {name} </p>
+                    <p className="MyDetails"> <strong>Date Of Birth</strong> : {dob} </p>
+                    <p className="MyDetails"> <strong>Hobby</strong> : {hobby} </p>
                 </div>
             </div>
             <div className="col-md-10">
@@ -44,6 +47,7 @@ const Print = (props) => {
                     
                 </div>
             </div>
+            <button className="btn-success btn noPrint" onClick={done} >Print</button>
         </div>
         
     );

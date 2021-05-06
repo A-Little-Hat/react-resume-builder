@@ -20,13 +20,18 @@
         margin: 0;
         box-shadow: none;
     }
-    
-    .printFile{
-    border: blue;
-    border-radius: 5px;
+    .col2{
+        display: block;
+        margin: auto;
+        padding: 2px;
+    }
+    .Myprof{
+        display: block;
+        margin: auto;
     }
 }
 @page {
       height: 6in;
       width: 7in;  
 }
+
