@@ -7,10 +7,10 @@ const Print = (props) => {
         window.print()
     }
     var result=props.data
-    console.log(props.data)
+    console.log(result)
     var name=result.name
-    var dob = "01.01.01"
-    var hobby = "result.hobby"
+    var dob = result.dob
+    var hobby = result.hobby
     var profile=result.profile
     var workXP=result.workXP
     var education=result.education
@@ -18,7 +18,7 @@ const Print = (props) => {
             document.getElementById("profile").innerHTML=profile
             document.getElementById("Work").innerHTML=workXP
             document.getElementById("education").innerHTML=education
-        }, [profile,name,workXP,education,name,hobby,dob])
+        }, [profile,name,workXP,education,hobby,dob])
     
     return (
         
