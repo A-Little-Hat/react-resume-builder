@@ -6,9 +6,8 @@ const Home = (props) => {
     
     return (
             
-        <div>
             <Resume setIsPrint={props.setIsPrint} setData={props.setData} />
-        </div>
+        
     );
 }
 

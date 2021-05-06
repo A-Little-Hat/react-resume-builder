@@ -12,8 +12,8 @@ const Resume = (props) => {
         var first_name = document.getElementById("first").value
         var middle_name = document.getElementById("middle").value
         var last_name = document.getElementById("last").value
+        var dob = document.getElementById("dob").value
         var name = first_name + " " + middle_name + " " + last_name
-        var dob = startDate
         if (name && profile && workXP && education && dob && hobby) {
             const details = { name, profile, workXP, education, dob, hobby }
             props.setData(details)
@@ -25,7 +25,6 @@ const Resume = (props) => {
         }
     }
     const [hobby, setHobby] = useState("My Hobby")
-    const [startDate, setStartDate] = useState(new Date());
     const [profile, setprofile] = useState("");
     const [workXP, setWorkXP] = useState("");
     const [education, setEducation] = useState("");
@@ -48,7 +47,7 @@ const Resume = (props) => {
                 </div>
                 <label className="draw-border Mybtn my-2 mx-5" htmlFor="dateOfBirth">Date of Birth</label>
                 <div >
-                <input type="date"  onChange={setStartDate} />
+                <input type="date"  id="dob" />
                 </div>
                 <label className="draw-border Mybtn my-2 mx-5" htmlFor="Hobby">Hobby</label>
                 <div >
