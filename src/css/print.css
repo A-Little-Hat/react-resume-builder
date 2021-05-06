@@ -7,15 +7,26 @@
     color: white;
 }
 .MyData{
-    margin-top: 25px;
-    min-height: 20vh;
+    margin-top: 20px;
+    min-height: 15vh;
     margin-bottom: 25px;
     background-color: rgba(215, 219, 211, 0.349);
     padding: 10px;
 }
-/* .Myprof{
-    border-color: black;
-    border-width: 5px;
-    min-height: 100vh;
-    min-width: 40px;
-} */
+@media print {
+    .noPrint { display: none; }
+    .row {
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    .printFile{
+    border: blue;
+    border-radius: 5px;
+    }
+}
+@page {
+      height: 6in;
+      width: 7in;  
+}

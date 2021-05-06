@@ -6,6 +6,8 @@ const Print = (props) => {
     var result=props.data
     console.log(props.data)
     var name=result.name
+    var dob = "01.01.01"
+    var hobby = "result.hobby"
     var profile=result.profile
     var workXP=result.workXP
     var education=result.education
@@ -13,14 +15,16 @@ const Print = (props) => {
             document.getElementById("profile").innerHTML=profile
             document.getElementById("Work").innerHTML=workXP
             document.getElementById("education").innerHTML=education
-        }, [profile,name,workXP,education])
+        }, [profile,name,workXP,education,name,hobby,dob])
     
     return (
         
-        <div className="row m-4 mt-5">
+        <div className="row printFile m-4 mt-5">
             <div className="col-md-2" >
                 <div className="Myprof">
-                {name}
+                    <p className="MyDetails"> Name : {name} </p>
+                    <p className="MyDetails"> Date Of Birth : {dob} </p>
+                    <p className="MyDetails"> Hobby : {hobby} </p>
                 </div>
             </div>
             <div className="col-md-10">
