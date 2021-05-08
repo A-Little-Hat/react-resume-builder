@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ReactDatePicker from 'react-datepicker';
 
+import 'react-datepicker/dist/react-datepicker.css'
 import '../css/resume.css'
 import '../css/headline.css'
 
 const Resume = (props) => {
-    const print = (e) => {
+        const print = (e) => {
         e.preventDefault();
         var first_name = document.getElementById("first").value
         var middle_name = document.getElementById("middle").value
         var last_name = document.getElementById("last").value
-        var dob = document.getElementById("dob").value
+        var dob = datify()
+        console.log(dob)
         var name = first_name + " " + middle_name + " " + last_name
         if (name && profile && workXP && education && dob && hobby) {
             const details = { name, profile, workXP, education, dob, hobby }
@@ -24,10 +27,15 @@ const Resume = (props) => {
             alert("please fill all the fields")
         }
     }
+    var datify=()=>{
+            var format = `${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`
+            return format;
+        }
     const [hobby, setHobby] = useState("My Hobby")
     const [profile, setprofile] = useState("");
     const [workXP, setWorkXP] = useState("");
     const [education, setEducation] = useState("");
+    const [date, setDate] = useState();
     return (
         <div className="container-flude m-2 text-center draw-border p-5" >
             <p>
@@ -47,7 +55,14 @@ const Resume = (props) => {
                 </div>
                 <label className="draw-border Mybtn my-2 mx-5" htmlFor="dateOfBirth">Date of Birth</label>
                 <div >
-                <input type="date"  id="dob" />
+                <ReactDatePicker 
+                    selected={date} 
+                    onChange={date=>{setDate(date)}} 
+                    maxDate={new Date()} 
+                    isClearable
+                    showYearDropdown
+                    dateFormat="dd-MM-yyyy"
+                />
                 </div>
                 <label className="draw-border Mybtn my-2 mx-5" htmlFor="Hobby">Hobby</label>
                 <div >
