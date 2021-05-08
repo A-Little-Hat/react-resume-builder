@@ -7,14 +7,14 @@ const Print = (props) => {
         window.print()
     }
     var result=props.data
-    console.log(result)
+    // console.log (result)
     var name=result.name
     var dob = result.dob
     var hobby = result.hobby
     var profile=result.profile
     var workXP=result.workXP
     var education=result.education
-    console.log(hobby)
+    // console.log (hobby)
         useEffect(() => {
             document.getElementById("profile").innerHTML=profile
             document.getElementById("Work").innerHTML=workXP

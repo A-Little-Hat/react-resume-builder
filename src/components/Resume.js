@@ -15,7 +15,7 @@ const Resume = (props) => {
         var middle_name = document.getElementById("middle").value
         var last_name = document.getElementById("last").value
         var dob = datify()
-        console.log(dob)
+        // console.log(dob)
         var name = first_name + " " + middle_name + " " + last_name
         if (name && profile && workXP && education && dob && hobby) {
             const details = { name, profile, workXP, education, dob, hobby }
